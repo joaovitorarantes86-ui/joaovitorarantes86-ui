@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ---- Menu mobile ----
   var toggle = document.querySelector('.menu-toggle');
-  var menu = document.querySelector('.nav-list');
-  if (toggle && menu) {
+  var wrapper = document.querySelector('.nav-wrapper');
+  if (toggle && wrapper) {
     toggle.addEventListener('click', function() {
       this.classList.toggle('ativo');
-      menu.classList.toggle('aberto');
+      wrapper.classList.toggle('aberto');
     });
-    menu.querySelectorAll('a').forEach(function(link) {
+    wrapper.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         toggle.classList.remove('ativo');
-        menu.classList.remove('aberto');
+        wrapper.classList.remove('aberto');
       });
     });
   }

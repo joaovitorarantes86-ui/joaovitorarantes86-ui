@@ -4,7 +4,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="index.php" class="logo-text">Inácio <span>Pizzaria</span></a>
+                <a href="index.php" class="logo-text">Arantes <span>Pizzaria</span></a>
                 <p>Tradição italiana desde 2010. Massa fermentada por 48h, forno a lenha e ingredientes frescos. A verdadeira pizza artesanal de Campo Grande.</p>
             </div>
             <div class="footer-col">
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Inácio Pizzaria. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Arantes Pizzaria. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>

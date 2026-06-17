@@ -65,9 +65,14 @@ $mensagens = $pdo->query("SELECT * FROM mensagens ORDER BY criado_em DESC LIMIT 
 
     <aside class="admin-sidebar">
         <div class="logo-text">
-            Inácio <span>Pizzaria</span>
+            Arantes <span>Pizzaria</span>
             <small>Painel Admin</small>
         </div>
+        <button class="menu-toggle" id="adminMenuToggle" aria-label="Abrir menu" style="margin:0 12px 16px; display:none;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="sidebar-nav" id="sidebarNav">
             <a href="index.php" class="ativo">&#9679; Dashboard</a>
             <a href="cardapio.php">&#9679; Cardápio</a>

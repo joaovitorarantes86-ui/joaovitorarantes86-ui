@@ -375,6 +375,7 @@ table tbody tr:hover {
   }
   .admin-sidebar .sidebar-nav { display: none; }
   .admin-sidebar .sidebar-nav.aberto { display: block; }
+  .admin-sidebar .menu-toggle { display: flex !important; }
   .admin-sidebar .sidebar-footer { display: none; }
   .admin-main { padding: 16px; }
   .stats-grid { grid-template-columns: 1fr; }

@@ -42,7 +42,6 @@ if (!empty($erros)) {
         'tamanho' => $tamanho, 'endereco' => $endereco, 'cep' => $cep,
         'pagamento' => $pagamento, 'obs' => $obs
     ];
-    $pizza_label = '';
     header('Location: ../pedidos.php');
     exit;
 }

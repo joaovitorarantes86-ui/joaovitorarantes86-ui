@@ -156,8 +156,7 @@ img { max-width: 100%; display: block; }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 48px;
+  justify-content: space-between;
   height: 72px;
 }
 
@@ -170,6 +169,12 @@ img { max-width: 100%; display: block; }
 }
 .logo-text span {
   color: var(--gold);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav-list {
@@ -241,6 +246,7 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,0.5);
   font-size: 0.82rem;
   padding: 0 4px;
+  white-space: nowrap;
 }
 
 /* menu mobile */
@@ -480,7 +486,76 @@ section { padding: 72px 0; }
 
 /* ===== CARDÁPIO ===== */
 .cardapio-section {
+  background: var(--gray-50);
+}
+
+/* filtros e busca */
+.cardapio-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--gray-200);
   background: var(--white);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+}
+.filter-btn.ativo {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-dark);
+}
+
+.search-box {
+  position: relative;
+  min-width: 200px;
+}
+.search-box input {
+  width: 100%;
+  padding: 9px 16px 9px 40px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+}
+.search-box::before {
+  content: '\1F50D';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .menu-grid {
@@ -498,6 +573,7 @@ section { padding: 72px 0; }
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .menu-card:hover {
   transform: translateY(-6px);
@@ -525,6 +601,27 @@ section { padding: 72px 0; }
 }
 .menu-card:hover .menu-card-img img {
   transform: scale(1.08);
+}
+
+.menu-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.menu-badge.destaque {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+.menu-badge.nova {
+  background: var(--basil);
+  color: var(--white);
 }
 
 .menu-card-body {
@@ -570,6 +667,16 @@ section { padding: 72px 0; }
 }
 .btn-menu-order:hover {
   background: var(--navy-light);
+}
+
+.cardapio-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+  grid-column: 1 / -1;
+}
+.cardapio-empty p {
+  font-size: 1rem;
 }
 
 /* ===== FORMULÁRIOS ===== */
@@ -967,7 +1074,7 @@ section { padding: 72px 0; }
 @media (max-width: 960px) {
   .menu-toggle { display: block; }
 
-  .nav-list {
+  .nav-wrapper {
     position: fixed;
     top: 0;
     right: -100%;
@@ -977,21 +1084,31 @@ section { padding: 72px 0; }
     flex-direction: column;
     align-items: flex-start;
     padding: 80px 28px 28px;
-    gap: 6px;
+    gap: 24px;
     transition: right 0.35s ease;
     z-index: 100;
     box-shadow: -8px 0 32px rgba(0,0,0,0.3);
   }
-  .nav-list.aberto { right: 0; }
-  .nav-list a { width: 100%; padding: 12px 16px; }
-
-  .nav-action { flex-direction: column; width: 100%; }
-  .nav-action .btn { width: 100%; text-align: center; }
-  .nav-user { display: none; }
+  .nav-wrapper.aberto { right: 0; }
+  .nav-wrapper .nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 2px;
+  }
+  .nav-wrapper .nav-list a { width: 100%; padding: 12px 16px; }
+  .nav-wrapper .nav-action {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 16px;
+  }
+  .nav-wrapper .nav-action .nav-btn,
+  .nav-wrapper .nav-action .btn { width: 100%; text-align: center; }
+  .nav-wrapper .nav-user { display: block; }
 
   .hero-content { padding: 60px 0; }
   .hero-metrics { gap: 20px; flex-wrap: wrap; }
-  .header-inner { gap: 24px; }
 
   .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1002,7 +1119,6 @@ section { padding: 72px 0; }
 
 @media (max-width: 860px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .header-inner { gap: 24px; }
 }
 
 @media (max-width: 700px) {
@@ -1022,6 +1138,9 @@ section { padding: 72px 0; }
 
   .about-stats { gap: 12px; }
   .stat-box { padding: 20px 16px; }
+
+  .cardapio-toolbar { flex-direction: column; align-items: stretch; }
+  .search-box { min-width: 0; }
 }
 
 @media (max-width: 480px) {
