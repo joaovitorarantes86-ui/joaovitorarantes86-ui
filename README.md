@@ -9,10 +9,10 @@
 ```python
 class Developer:
     name       = "João Vitor Arantes"
-    role       = "Backend Developer"
+    role       = "WEB Developer"
     location   = "Brasil 🇧🇷"
-    languages  = ["Python", "SQL"]
-    frameworks = ["FastAPI"]
+    languages  = ["Java","Python", "SQL"]
+    frameworks = ["FastAPI","Spring Boot"]
     focus      = ["APIs REST", "Arquitetura de sistemas", "Performance"]
     currently  = "Construindo coisas que funcionam."
 ```
